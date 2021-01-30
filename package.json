@@ -1,0 +1,87 @@
+{
+	"name": "vscode-html-coding-utility",
+	"displayName": "Html Image Coding Utility",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:htmlCodingUtility.copyHtml",
+		"onCommand:htmlCodingUtility.copyHtml@2x",
+		"onCommand:htmlCodingUtility.copyCss",
+		"onCommand:htmlCodingUtility.copyCss@2x",
+		"onCommand:htmlCodingUtility.copyCss@2xWithContent"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "htmlCodingUtility.copyHtml",
+				"title": "Copy html"
+			},
+			{
+				"command": "htmlCodingUtility.copyHtml@2x",
+				"title": "Copy html@2x"
+			},
+			{
+				"command": "htmlCodingUtility.copyCss",
+				"title": "Copy css"
+			},
+			{
+				"command": "htmlCodingUtility.copyCss@2x",
+				"title": "Copy css@2x"
+			},
+			{
+				"command": "htmlCodingUtility.copyCss@2xWithContent",
+				"title": "Copy css@2x with content prop"
+			}
+		],
+		"s": {
+			"explorer/context": [
+				{
+					"when": "resourceFilename =~ /\\.(png|jpeg|jpg|gif|svg|webp)$/",
+					"command": "htmlCodingUtility.copyHtml"
+				},
+				{
+					"when": "resourceFilename =~ /\\.(png|jpeg|jpg|gif|svg|webp)$/",
+					"command": "htmlCodingUtility.copyHtml@2x"
+				},
+				{
+					"when": "resourceFilename =~ /\\.(png|jpeg|jpg|gif|svg|webp)$/",
+					"command": "htmlCodingUtility.copyCss"
+				},
+				{
+					"when": "resourceFilename =~ /\\.(png|jpeg|jpg|gif|svg|webp)$/",
+					"command": "htmlCodingUtility.copyCss@2x"
+				},
+				{
+					"when": "resourceFilename =~ /\\.(png|jpeg|jpg|gif|svg|webp)$/",
+					"command": "htmlCodingUtility.copyCss@2xWithContent"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.52.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.15.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	},
+	"dependencies": {
+		"image-size": "^0.9.3"
+	}
+}
