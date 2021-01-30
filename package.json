@@ -40,7 +40,7 @@
 				"title": "Copy css@2x with content prop"
 			}
 		],
-		"s": {
+		"menus": {
 			"explorer/context": [
 				{
 					"when": "resourceFilename =~ /\\.(png|jpeg|jpg|gif|svg|webp)$/",
