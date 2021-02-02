@@ -69,12 +69,12 @@ function activate(context) {
 			const src = relativePath;
 			const width = dimensions.width;
 			const height = dimensions.height;
-			const imgHtml = `background-image: url("${src}");
+			const imgCss = `background-image: url("${src}");
 background-size: ${width}px ${height}px;
 background-position: 0 0;
 background-repeat: no-repeat;`;
 
-			vscode.env.clipboard.writeText(imgHtml);
+			vscode.env.clipboard.writeText(imgCss);
 		});
 	});
 
@@ -92,12 +92,12 @@ background-repeat: no-repeat;`;
 			const src = relativePath;
 			const width = dimensions.width * 0.5;
 			const height = dimensions.height * 0.5;
-			const imgHtml = `background-image: url("${src}");
+			const imgCss = `background-image: url("${src}");
 background-size: ${width}px ${height}px;
 background-position: 0 0;
 background-repeat: no-repeat;`;
 
-			vscode.env.clipboard.writeText(imgHtml);
+			vscode.env.clipboard.writeText(imgCss);
 		});
 	});
 
@@ -115,7 +115,7 @@ background-repeat: no-repeat;`;
 			const src = relativePath;
 			const width = dimensions.width * 0.5;
 			const height = dimensions.height * 0.5;
-			const imgHtml = `content: "";
+			const imgCss = `content: "";
 width: ${width}px;
 height: ${height}px;
 background-image: url("${src}");
@@ -123,21 +123,23 @@ background-size: contain;
 background-position: 0 0;
 background-repeat: no-repeat;`;
 
-			vscode.env.clipboard.writeText(imgHtml);
+			vscode.env.clipboard.writeText(imgCss);
 		});
 	});
 
-	context.subscriptions.push(disposable1);
-	context.subscriptions.push(disposable2);
-	context.subscriptions.push(disposable3);
-	context.subscriptions.push(disposable4);
-	context.subscriptions.push(disposable5);
+	context.subscriptions.push(...[
+		disposable1,
+		disposable2,
+		disposable3,
+		disposable4,
+		disposable5
+	]);
 
 }
 exports.activate = activate;
 
 // this method is called when your extension is deactivated
-function deactivate() {}
+function deactivate() { }
 
 module.exports = {
 	activate,
