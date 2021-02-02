@@ -3,7 +3,11 @@
 	"displayName": "Html Image Coding Utility",
 	"description": "",
 	"publisher": "fuyuan9",
-	"version": "0.0.1",
+	"version": "0.0.2",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/fuyuan9/vscode-html-coding-utility.git"
+	},
 	"engines": {
 		"vscode": "^1.52.0"
 	},
